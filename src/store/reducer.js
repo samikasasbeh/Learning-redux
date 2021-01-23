@@ -4,25 +4,23 @@ const initialState = {
 };
 
 const reducer =(state = initialState, action) =>{
-    if(action.type === 'Increment'){
-        return{
-            counter: state.counter + 1
-        }
-    }
-    if(action.type === 'Decrement'){
-        return{
-            counter: state.counter - 1
-        }
-    }
-    if(action.type === 'Add'){
-        return{
-            counter: state.counter + action.value
-        }
-    }
-    if(action.type === 'Subtract'){
-        return{
-            counter:state.counter - action.value
-        }
+    switch (action.type) {
+        case 'Increment':
+            return{
+                counter: state.counter + 1
+            }
+        case 'Decrement':
+            return{
+                counter: state.counter - 1
+            } 
+        case 'Add':
+            return{
+                counter: state.counter + action.value
+            }
+        case 'Subtract':
+            return{
+                counter: state.counter - action.value
+            }
     }
     
     return state;
